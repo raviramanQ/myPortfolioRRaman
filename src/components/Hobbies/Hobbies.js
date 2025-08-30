@@ -4,18 +4,54 @@ import './Hobbies.css';
 
 const Hobbies = () => {
   const books = [
-    "Biography of Indra Nooyi",
-    "Wings of Fire",
-    "Think Like a Monk",
-    "Autobiography of B.R. Ambedkar",
-    "Indian History",
-    "India Before Independence",
-    "Can't Hurt Me - David Goggins",
-    "Attitude is Everything - Jeff Keller",
-    "Steve Jobs Biography",
-    "Doglapan - Ashneer Grover",
-    "Mossad",
-    "Discipline is Everything"
+    {
+      title: "Biography of Indra Nooyi",
+      wisdom: "Leadership isn't about being perfect—it's about being authentic, making tough decisions, and caring deeply about people while driving results."
+    },
+    {
+      title: "Wings of Fire",
+      wisdom: "Dream is not what you see in sleep, it's the thing which doesn't let you sleep. Success comes to those who dare to begin."
+    },
+    {
+      title: "Think Like a Monk",
+      wisdom: "The mind is everything. What you think you become. Train your mind to see the good in everything, and you'll find peace in any situation."
+    },
+    {
+      title: "Autobiography of B.R. Ambedkar",
+      wisdom: "Education is the milk of lioness—whoever drinks it will roar. Fight for justice, equality, and never let circumstances define your destiny."
+    },
+    {
+      title: "Indian History",
+      wisdom: "Understanding our past illuminates our present. Every civilization rises through knowledge, falls through ignorance, and rebuilds through wisdom."
+    },
+    {
+      title: "India Before Independence",
+      wisdom: "Freedom is not given, it's earned through sacrifice. The struggles of yesterday teach us to value the opportunities of today."
+    },
+    {
+      title: "Can't Hurt Me - David Goggins",
+      wisdom: "You are in danger of living a life so comfortable and soft that you will die without ever realizing your true potential."
+    },
+    {
+      title: "Attitude is Everything - Jeff Keller",
+      wisdom: "Your attitude determines your altitude. Positive thinking isn't about expecting the best to happen—it's about accepting whatever happens for the best."
+    },
+    {
+      title: "Steve Jobs Biography",
+      wisdom: "Innovation distinguishes between a leader and a follower. Stay hungry, stay foolish, and never settle for anything less than extraordinary."
+    },
+    {
+      title: "Doglapan - Ashneer Grover",
+      wisdom: "Entrepreneurship is about taking calculated risks, learning from failures, and never compromising on your vision despite criticism."
+    },
+    {
+      title: "Mossad",
+      wisdom: "Intelligence is not just about gathering information—it's about understanding human nature, building trust, and making split-second decisions."
+    },
+    {
+      title: "Discipline is Everything",
+      wisdom: "Discipline is the bridge between goals and accomplishment. Small daily improvements lead to stunning long-term results."
+    }
   ];
 
   const hobbies = [
@@ -80,7 +116,10 @@ const Hobbies = () => {
             {books.map((book, index) => (
               <div key={index} className="book-item">
                 <FaBook className="book-icon" />
-                <span className="book-title">{book}</span>
+                <div className="book-content">
+                  <h4 className="book-title">{book.title}</h4>
+                  <p className="book-wisdom">{book.wisdom}</p>
+                </div>
               </div>
             ))}
           </div>

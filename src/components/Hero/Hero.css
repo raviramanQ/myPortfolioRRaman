@@ -637,10 +637,10 @@
     padding: 0.3rem 0.6rem;
   }
 
-  .floating-badge.react {
+  /* .floating-badge.react {
     top: 8%;
     left: 8%;
-  }
+  } */
 
   .floating-badge.node {
     top: 8%;
@@ -783,9 +783,13 @@
   }
 
   .profile-container {
-    width: 180px;
-    height: 180px;
+    width: 300px;
+    height: 300px;
     margin-bottom: 0.8rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .profile-image {
@@ -794,30 +798,32 @@
   }
 
   .floating-badge {
-    font-size: 0.55rem;
-    padding: 0.2rem 0.4rem;
-    border-radius: 12px;
+    font-size: 0.7rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
   }
 
-  .floating-badge.react {
-    top: 3%;
-    left: 3%;
-  }
+  /* .floating-badge.react {
+    top: -20%;
+    right: -30%;
+  } */
 
-  .floating-badge.nodejs {
-    top: 3%;
-    right: 3%;
-  }
+  /* .floating-badge.nodejs {
+    bottom: -20%;
+    left: -30%;
+  } */
 
-  .floating-badge.mongodb {
-    bottom: 3%;
-    left: 3%;
-  }
+  /* .floating-badge.mongodb {
+    top: -20%;
+    left: -30%;
+  } */
 
-  .floating-badge.javascript {
-    bottom: 3%;
-    right: 3%;
-  }
+  /* .floating-badge.javascript {
+    bottom: -20%;
+    right: -30%;
+  } */
 
   .scroll-indicator {
     bottom: 20px;
@@ -900,4 +906,30 @@
     width: 120px;
     height: 120px;
   }
+  
+  .floating-badge {
+    font-size: 0.55rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 12px;
+  }
+  
+  /* .floating-badge.react {
+    top: 15%;
+    left: 15%;
+  } */
+  
+  /* .floating-badge.nodejs {
+    top: 15%;
+    right: 15%;
+  } */
+  
+  /* .floating-badge.mongodb {
+    bottom: 15%;
+    left: 15%;
+  }
+  
+  .floating-badge.javascript {
+    bottom: 15%;
+    right: 15%;
+  } */
 }
