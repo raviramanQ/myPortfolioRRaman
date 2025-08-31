@@ -77,13 +77,30 @@ const Projects = () => {
       image: "/api/placeholder/400/250",
       technologies: ["JavaScript", "PHP", "MySQL", "MongoDB", "Redis"],
       category: "fullstack",
-      github: "https://github.com/raviramanQ/91wheels-admin",
-      live: "https://admin.91wheels.com",
+      github: "",
+      live: "http://backenduat.91wheels.com/tp-admin/authenticator/signin",
       features: [
         "Designed and implemented core key features and modules using Object-Oriented Programming (OOP) principles, prioritizing scalability, code modularity, and facilitating seamless future development",
         "Designed and integrated modules for data aggregation, client-specific data filtering, and customized data delivery via various API formats, employing MongoDB and MySQL for efficient data storage on the server"
       ]
+    },
+    {
+      "id": 6,
+      "title": "Editorial Vocabulary Quiz App",
+      "description": "Developed an interactive React-based quiz application for practicing advanced editorial vocabulary with timed MCQs, progress tracking, and detailed explanations. Deployed on GitHub Pages for global accessibility.",
+      "image": "/api/placeholder/400/250",
+      "technologies": ["JavaScript", "React"],
+      "category": "frontend",
+      "github": "https://github.com/raviramanQ/editorial-mcq-quiz",
+      "live": "https://raviramanq.github.io/editorial-mcq-quiz",
+      "features": [
+        "Built a responsive React application to deliver timed multiple-choice vocabulary quizzes with scoring and feedback",
+        "Implemented date-based quiz selection and JSON-driven question management for flexible content updates",
+        "Utilized process.env.PUBLIC_URL for correct asset resolution on GitHub Pages, ensuring smooth deployment and reliable data fetching",
+        "Designed clean UI with navigation, timer, and results view to improve user engagement and learning outcomes"
+      ]
     }
+    
   ];
 
   const categories = [
