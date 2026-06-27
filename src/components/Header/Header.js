@@ -33,7 +33,7 @@ const Navbar = () => {
             </NavLink>
           ))}
           <a
-            href="https://drive.google.com/uc?export=download&id=1WrsaJ83sot4d1MAVOZ8lDgEVoDXPtdS6"
+            href="https://drive.google.com/uc?export=download&id=1p-_a5zYJ30W-DIUea7SElhXoLjGEb52C"
             className="nav-hire-mobile"
             target="_blank"
             rel="noopener noreferrer"
@@ -44,7 +44,7 @@ const Navbar = () => {
         </nav>
 
         <a
-          href="https://drive.google.com/uc?export=download&id=1WrsaJ83sot4d1MAVOZ8lDgEVoDXPtdS6"
+          href="https://drive.google.com/uc?export=download&id=1p-_a5zYJ30W-DIUea7SElhXoLjGEb52C"
           className="hire-btn"
           target="_blank"
           rel="noopener noreferrer"
