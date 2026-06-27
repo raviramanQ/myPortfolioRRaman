@@ -1,126 +1,63 @@
 import React from 'react';
-import { FaCode, FaServer, FaDatabase, FaMobile } from 'react-icons/fa';
 import './About.css';
 
-const About = () => {
-  return (
-    <section id="about" className="about section-padding">
-      <div className="container">
-        <div className="text-center">
-          <h2 className="section-title">About Me</h2>
-          <p className="section-subtitle">
-            Passionate Full Stack Developer with expertise in modern web technologies
+const About = () => (
+  <main className="page">
+    <div className="container">
+      <div className="section-number"><span>№ 02</span></div>
+      <h1 className="page-headline">About <span className="amber">me.</span></h1>
+      <div className="amber-rule" />
+
+      <div className="about-grid">
+        <div className="about-text">
+          <p>
+            Full Stack developer with <strong>5 years</strong> building scalable web applications,
+            AI-powered pipelines, and cloud systems. Currently at{' '}
+            <span className="amber">Vansun Media Tech</span> as a Full Stack Developer.
+          </p>
+          <p>
+            Expert in the <span className="amber">MERN stack</span> and <span className="amber">PHP</span>,
+            with deep experience in Agentic AI, Retrieval-Augmented Generation (RAG), and Generative AI
+            using LangChain and OpenAI. Two years of hands-on AWS and networking — EC2, S3, Lambda, VPC.
+          </p>
+          <p>
+            I hold a B.Tech in Computer Science from Manav Rachna International Institute of Research
+            and Studies, Delhi NCR. I'm passionate about building systems that are fast, intelligent,
+            and built to scale.
           </p>
         </div>
-        
-        <div className="about-content">
-          <div className="about-text">
-            <div className="about-description">
-              <p>
-                I'm a dedicated Full Stack Software Developer with 3.5 years of experience 
-                in creating robust, scalable web applications. Currently working at Vansun Media Tech 
-                as a Full Stack Developer, I specialize in lead management systems, e-commerce platforms, 
-                and API integrations that drive business growth.
-              </p>
-              
-              <p>
-                I have extensive expertise in the MERN stack (MongoDB, Express.js, React.js, Node.js) 
-                along with modern technologies like Redis, MySQL, TypeScript, and cloud services. 
-                My experience includes developing high-performance applications that serve 20K+ daily users 
-                and optimizing systems for 40% efficiency improvements.
-              </p>
-              
-              <p>
-                I hold a Bachelor of Technology in Computer Science from Manav Rachna International 
-                Institute of Research and Studies, Delhi NCR. I'm passionate about building scalable 
-                solutions and continuously learning new technologies to enhance development efficiency 
-                and user experience.
-              </p>
-            </div>
-            
-            <div className="personal-info">
-              <div className="info-grid">
-                <div className="info-item">
-                  <span className="label">Name:</span>
-                  <span className="value">Ravi Raman</span>
-                </div>
-                <div className="info-item">
-                  <span className="label">Location:</span>
-                  <span className="value">Delhi, Pan India</span>
-                </div>
-                <div className="info-item">
-                  <span className="label">Experience:</span>
-                  <span className="value">3.5 Years</span>
-                </div>
-                <div className="info-item">
-                  <span className="label">Specialization:</span>
-                  <span className="value">Full Stack MERN Development</span>
-                </div>
-                <div className="info-item">
-                  <span className="label">Phone:</span>
-                  <span className="value">+91 88-510-48263</span>
-                </div>
-                <div className="info-item">
-                  <span className="label">Email:</span>
-                  <span className="value">raviraman03111996@gmail.com</span>
-                </div>
-                <div className="info-item">
-                  <span className="label">Availability:</span>
-                  <span className="value">Open to Opportunities</span>
-                </div>
-              </div>
-            </div>
+
+        <div className="about-info">
+          <div className="left-border-card">
+            <p className="label">Name</p>
+            <p className="value">Ravi Raman</p>
           </div>
-          
-          <div className="about-features">
-            <div className="feature-card">
-              <div className="feature-icon">
-                <FaCode />
-              </div>
-              <h3>Frontend Development</h3>
-              <p>
-                Creating responsive, interactive user interfaces using React.js, 
-                HTML5, CSS3, and modern JavaScript frameworks.
-              </p>
-            </div>
-            
-            <div className="feature-card">
-              <div className="feature-icon">
-                <FaServer />
-              </div>
-              <h3>Backend Development</h3>
-              <p>
-                Building robust server-side applications with Node.js, Express.js, 
-                and implementing secure RESTful APIs.
-              </p>
-            </div>
-            
-            <div className="feature-card">
-              <div className="feature-icon">
-                <FaDatabase />
-              </div>
-              <h3>Database Management</h3>
-              <p>
-                Designing and optimizing databases using MongoDB, MySQL, Redis, Elastic
-                and implementing efficient data structures.
-              </p>
-            </div>
-            
-            <div className="feature-card">
-              <div className="feature-icon">
-                <FaMobile />
-              </div>
-              <h3>Responsive Design</h3>
-              <p>
-                Ensuring seamless user experience across all devices with 
-                mobile-first approach and modern CSS frameworks.
-              </p>
-            </div>
+          <div className="left-border-card">
+            <p className="label">Location</p>
+            <p className="value">Delhi, Pan India</p>
+          </div>
+          <div className="left-border-card">
+            <p className="label">Experience</p>
+            <p className="value">5 Years</p>
+          </div>
+          <div className="left-border-card">
+            <p className="label">Specialization</p>
+            <p className="value">MERN · PHP · Agentic AI · RAG · AWS</p>
+          </div>
+          <div className="left-border-card">
+            <p className="label">Email</p>
+            <p className="value">
+              <a href="mailto:raviraman03111996@gmail.com" className="amber-link">raviraman03111996@gmail.com</a>
+            </p>
+          </div>
+          <div className="left-border-card">
+            <p className="label">Status</p>
+            <p className="value amber">Open to Opportunities</p>
           </div>
         </div>
       </div>
-    </section>
-  );
-};
+    </div>
+  </main>
+);
 
 export default About;
