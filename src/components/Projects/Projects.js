@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaFilter } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
@@ -85,7 +84,23 @@ const Projects = () => {
       ]
     },
     {
-      "id": 6,
+      id: 6,
+      title: "Agentic AI RAG Pipeline",
+      description: "Built a production-grade Retrieval-Augmented Generation (RAG) pipeline with agentic capabilities. The system ingests documents, indexes them into a vector store, and uses an LLM agent to answer complex multi-hop questions with source citations.",
+      image: "/api/placeholder/400/250",
+      technologies: ["Python", "LangChain", "OpenAI API", "Pinecone", "Node.js", "React", "AWS Lambda"],
+      category: "ai",
+      github: "https://github.com/raviramanQ/agentic-rag-pipeline",
+      live: "",
+      features: [
+        "Designed multi-agent orchestration using LangChain with tool-calling for document retrieval, summarization, and fact-checking",
+        "Implemented semantic chunking and embedding pipeline with OpenAI embeddings stored in Pinecone vector DB",
+        "Built REST API with Node.js/Express exposing the RAG pipeline and deployed serverlessly on AWS Lambda",
+        "Created React frontend with streaming responses, source citation display, and conversation history management"
+      ]
+    },
+    {
+      "id": 8,
       "title": "Editorial Vocabulary Quiz App",
       "description": "Developed an interactive React-based quiz application for practicing advanced editorial vocabulary with timed MCQs, progress tracking, and detailed explanations. Deployed on GitHub Pages for global accessibility.",
       "image": "/api/placeholder/400/250",
@@ -106,6 +121,7 @@ const Projects = () => {
   const categories = [
     { key: 'all', label: 'All Projects' },
     { key: 'fullstack', label: 'Full Stack' },
+    { key: 'ai', label: 'AI / GenAI' },
     { key: 'frontend', label: 'Frontend' },
     { key: 'backend', label: 'Backend' }
   ];
@@ -115,103 +131,46 @@ const Projects = () => {
     : projects.filter(project => project.category === activeFilter);
 
   return (
-    <section id="projects" className="projects section-padding">
+    <main className="page">
       <div className="container">
-        <div className="text-center">
-          <h2 className="section-title">Featured Projects</h2>
-          <p className="section-subtitle">
-            A showcase of my recent work and technical expertise
-          </p>
-        </div>
-        
-        {/* Filter Buttons */}
-        <div className="project-filters">
-          <FaFilter className="filter-icon" />
-          {categories.map(category => (
+        <div className="section-number"><span>№ 04</span></div>
+        <h1 className="page-headline">Projects<span className="amber">.</span></h1>
+        <div className="amber-rule" />
+
+        <div className="projects-filters">
+          {categories.map(cat => (
             <button
-              key={category.key}
-              className={`filter-btn ${activeFilter === category.key ? 'active' : ''}`}
-              onClick={() => setActiveFilter(category.key)}
+              key={cat.key}
+              className={`proj-filter-btn ${activeFilter === cat.key ? 'active' : ''}`}
+              onClick={() => setActiveFilter(cat.key)}
             >
-              {category.label}
+              {cat.label.toUpperCase()}
             </button>
           ))}
         </div>
-        
-        {/* Projects Grid */}
+
         <div className="projects-grid">
           {filteredProjects.map(project => (
-            <div key={project.id} className="project-card">
-              <div className="project-image">
-                <div className="image-placeholder">
-                  <span>Project Screenshot</span>
-                </div>
-                <div className="project-overlay">
-                  <div className="project-links">
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      <FaGithub />
-                    </a>
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="project-link"
-                    >
-                      <FaExternalLinkAlt />
-                    </a>
-                  </div>
-                </div>
+            <div key={project.id} className={`project-card ${project.category === 'frontend' ? 'secondary' : ''}`}>
+              <p className="project-cat">{project.category} {project.category === 'ai' ? '/ genai' : ''}</p>
+              <h3 className="project-title">{project.title}</h3>
+              <p className="project-desc">{project.description}</p>
+              <div className="project-tech">
+                {project.technologies.map((t, i) => <span key={i}>{t}</span>)}
               </div>
-              
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                
-                <div className="project-features">
-                  <h4>Key Features:</h4>
-                  <ul>
-                    {project.features.slice(0, 3).map((feature, index) => (
-                      <li key={index}>{feature}</li>
-                    ))}
-                  </ul>
-                </div>
-                
-                <div className="project-technologies">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="tech-badge">{tech}</span>
-                  ))}
-                </div>
-                
-                <div className="project-actions">
-                  <a 
-                    href={project.github} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn btn-outline"
-                  >
-                    <FaGithub /> View Code
-                  </a>
-                  <a 
-                    href={project.live} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn btn-primary"
-                  >
-                    <FaExternalLinkAlt /> Live Demo
-                  </a>
-                </div>
+              <div className="project-links">
+                {project.github && (
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">GITHUB</a>
+                )}
+                {project.live && (
+                  <a href={project.live} target="_blank" rel="noopener noreferrer">LIVE</a>
+                )}
               </div>
             </div>
           ))}
         </div>
-        
       </div>
-    </section>
+    </main>
   );
 };
 
