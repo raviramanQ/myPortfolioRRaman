@@ -1,64 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import './Header.css';
 
-const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    closeMenu();
-  };
+  const navItems = [
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/skills', label: 'Skills' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/experience', label: 'Experience' },
+    { path: '/contact', label: 'Contact' },
+  ];
 
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container">
-        <div className="nav-wrapper">
-          <div className="logo">
-            <h2>Ravi Raman</h2>
-          </div>
-          
-          <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
-            <ul className="nav-list">
-              <li><a href="#home" onClick={() => scrollToSection('home')}>Home</a></li>
-              <li><a href="#about" onClick={() => scrollToSection('about')}>About</a></li>
-              <li><a href="#skills" onClick={() => scrollToSection('skills')}>Skills</a></li>
-              <li><a href="#experience" onClick={() => scrollToSection('experience')}>Experience</a></li>
-              <li><a href="#projects" onClick={() => scrollToSection('projects')}>Projects</a></li>
-              <li><a href="#hobbies" onClick={() => scrollToSection('hobbies')}>Hobbies</a></li>
-              <li><a href="#biodata" onClick={() => scrollToSection('biodata')}>Biodata</a></li>
-              <li><a href="#contact" onClick={() => scrollToSection('contact')}>Contact</a></li>
-            </ul>
-          </nav>
+    <header className="navbar">
+      <div className="container navbar-inner">
+        <NavLink to="/" className="navbar-logo">RR</NavLink>
 
-          <div className="menu-toggle" onClick={toggleMenu}>
-            {isMenuOpen ? <FaTimes /> : <FaBars />}
-          </div>
-        </div>
+        <nav className={`navbar-links ${menuOpen ? 'open' : ''}`}>
+          {navItems.map(({ path, label }) => (
+            <NavLink
+              key={path}
+              to={path}
+              end={path === '/'}
+              className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {label.toUpperCase()}
+            </NavLink>
+          ))}
+        </nav>
+
+        <a
+          href="https://drive.google.com/uc?export=download&id=1WrsaJ83sot4d1MAVOZ8lDgEVoDXPtdS6"
+          className="hire-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          HIRE ME
+        </a>
+
+        <button className="menu-toggle" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
     </header>
   );
 };
 
-export default Header;
+export default Navbar;
