@@ -32,6 +32,15 @@ const Navbar = () => {
               {label.toUpperCase()}
             </NavLink>
           ))}
+          <a
+            href="https://drive.google.com/uc?export=download&id=1WrsaJ83sot4d1MAVOZ8lDgEVoDXPtdS6"
+            className="nav-hire-mobile"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
+          >
+            HIRE ME
+          </a>
         </nav>
 
         <a
