@@ -42,33 +42,6 @@
   flex-wrap: wrap;
 }
 
-.btn-outline {
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  border: 0.5px solid var(--amber);
-  color: var(--amber);
-  padding: 10px 22px;
-  border-radius: 2px;
-  transition: background 0.2s, color 0.2s;
-}
-
-.btn-outline:hover { background: var(--amber); color: var(--navy); }
-
-.btn-solid {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  background: var(--amber);
-  color: var(--navy);
-  padding: 10px 22px;
-  border-radius: 2px;
-  font-weight: 700;
-  transition: opacity 0.2s;
-}
-
-.btn-solid:hover { opacity: 0.88; }
 
 .home-social {
   display: flex;

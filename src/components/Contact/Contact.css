@@ -36,8 +36,6 @@
 
 .contact-row-value { font-size: 12px; color: var(--text-primary); }
 
-.amber-link { color: var(--amber); }
-.amber-link:hover { text-decoration: underline; }
 
 .cta-box {
   background: var(--navy-surface);
@@ -73,22 +71,6 @@
   left: 0;
   color: var(--amber);
 }
-
-.btn-solid {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  background: var(--amber);
-  color: var(--navy);
-  padding: 10px 22px;
-  border-radius: 2px;
-  font-weight: 700;
-  transition: opacity 0.2s;
-}
-
-.btn-solid:hover { opacity: 0.88; }
 
 @media (max-width: 900px) {
   .contact-layout { grid-template-columns: 1fr; gap: 36px; }

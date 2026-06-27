@@ -50,7 +50,7 @@ const About = () => (
               <a href="mailto:raviraman03111996@gmail.com" className="amber-link">raviraman03111996@gmail.com</a>
             </p>
           </div>
-          <div className="left-border-card">
+          <div className="left-border-card status-open">
             <p className="label">Status</p>
             <p className="value amber">Open to Opportunities</p>
           </div>

@@ -104,7 +104,7 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="home-stats" style={{marginTop: '48px'}}>
+        <div className="skills-stats">
           <div className="stat"><span className="stat-num">5+</span><span className="stat-label">YRS EXPERIENCE</span></div>
           <div className="stat-divider" />
           <div className="stat"><span className="stat-num">20+</span><span className="stat-label">TECHNOLOGIES</span></div>

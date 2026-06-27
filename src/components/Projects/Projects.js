@@ -152,7 +152,7 @@ const Projects = () => {
         <div className="projects-grid">
           {filteredProjects.map(project => (
             <div key={project.id} className={`project-card ${project.category === 'frontend' ? 'secondary' : ''}`}>
-              <p className="project-cat">{project.category} {project.category === 'ai' ? '/ genai' : ''}</p>
+              <p className="project-cat">{project.category.toUpperCase()} {project.category === 'ai' ? '/ GENAI' : ''}</p>
               <h3 className="project-title">{project.title}</h3>
               <p className="project-desc">{project.description}</p>
               <div className="project-tech">

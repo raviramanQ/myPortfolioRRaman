@@ -63,11 +63,12 @@
   align-items: center;
 }
 
-.home-stats {
+.skills-stats {
   display: flex;
   align-items: center;
   gap: 32px;
   padding-top: 32px;
   border-top: 0.5px solid var(--border-slate);
   flex-wrap: wrap;
+  margin-top: 48px;
 }

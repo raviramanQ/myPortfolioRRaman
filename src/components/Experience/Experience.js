@@ -57,14 +57,6 @@ const Experience = () => {
     }
   ];
 
-  const certifications = [
-    "MongoDB Certified Developer",
-    "AWS Certified Cloud Practitioner",
-    "React.js Professional Certificate",
-    "Node.js Application Development",
-    "Full Stack Web Development Bootcamp"
-  ];
-
   return (
     <main className="page">
       <div className="container">

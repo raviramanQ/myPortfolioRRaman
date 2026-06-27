@@ -49,7 +49,7 @@ const Contact = () => (
             <a
               href="mailto:raviraman03111996@gmail.com"
               className="btn-solid"
-              style={{display:'inline-flex', marginTop:'20px'}}
+              style={{marginTop:'20px'}}
             >
               SAY HELLO
             </a>
