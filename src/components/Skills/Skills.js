@@ -1,171 +1,120 @@
-import React, { useState, useEffect } from 'react';
-import { FaReact, FaNodeJs, FaJs, FaHtml5, FaCss3Alt, FaGitAlt, FaAws, FaDocker, FaPhp } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiTypescript, SiTailwindcss, SiRedux, SiPostman, SiNextdotjs, SiMysql, SiRedis, SiElasticsearch, SiJenkins, SiBitbucket, SiWordpress, SiCplusplus, SiC, SiJquery } from 'react-icons/si';
+import React, { useState } from 'react';
+import { FaReact, FaNodeJs, FaJs, FaHtml5, FaCss3Alt, FaGitAlt, FaAws, FaDocker, FaPhp, FaCode } from 'react-icons/fa';
+import { SiMongodb, SiExpress, SiTypescript, SiRedux, SiNextdotjs, SiMysql, SiRedis, SiElasticsearch, SiJenkins, SiBitbucket, SiPostman } from 'react-icons/si';
 import './Skills.css';
 
+const CATEGORIES = [
+  {
+    key: 'frontend', label: 'Frontend',
+    skills: [
+      { name: 'React.js', icon: <FaReact /> },
+      { name: 'Next.js', icon: <SiNextdotjs /> },
+      { name: 'Redux', icon: <SiRedux /> },
+      { name: 'TypeScript', icon: <SiTypescript /> },
+      { name: 'JavaScript', icon: <FaJs /> },
+      { name: 'HTML5', icon: <FaHtml5 /> },
+      { name: 'CSS3', icon: <FaCss3Alt /> },
+    ]
+  },
+  {
+    key: 'backend', label: 'Backend',
+    skills: [
+      { name: 'Node.js', icon: <FaNodeJs /> },
+      { name: 'Express.js', icon: <SiExpress /> },
+      { name: 'PHP', icon: <FaPhp /> },
+      { name: 'REST APIs', icon: <FaCode /> },
+    ]
+  },
+  {
+    key: 'ai', label: 'AI / GenAI',
+    skills: [
+      { name: 'Generative AI', icon: <FaCode /> },
+      { name: 'Agentic AI', icon: <FaCode /> },
+      { name: 'RAG', icon: <FaCode /> },
+      { name: 'LangChain', icon: <FaCode /> },
+      { name: 'OpenAI API', icon: <FaCode /> },
+      { name: 'Prompt Eng.', icon: <FaCode /> },
+      { name: 'Vector DB', icon: <FaCode /> },
+    ]
+  },
+  {
+    key: 'database', label: 'Database',
+    skills: [
+      { name: 'MongoDB', icon: <SiMongodb /> },
+      { name: 'MySQL', icon: <SiMysql /> },
+      { name: 'Redis', icon: <SiRedis /> },
+      { name: 'Elasticsearch', icon: <SiElasticsearch /> },
+    ]
+  },
+  {
+    key: 'cloud', label: 'Cloud / AWS',
+    skills: [
+      { name: 'AWS EC2', icon: <FaAws /> },
+      { name: 'AWS S3', icon: <FaAws /> },
+      { name: 'AWS Lambda', icon: <FaAws /> },
+      { name: 'VPC / Networking', icon: <FaCode /> },
+      { name: 'Load Balancing', icon: <FaCode /> },
+    ]
+  },
+  {
+    key: 'tools', label: 'Tools',
+    skills: [
+      { name: 'Git', icon: <FaGitAlt /> },
+      { name: 'Docker', icon: <FaDocker /> },
+      { name: 'Jenkins', icon: <SiJenkins /> },
+      { name: 'Bitbucket', icon: <SiBitbucket /> },
+      { name: 'Postman', icon: <SiPostman /> },
+    ]
+  },
+];
+
 const Skills = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-  const [animatedSkills, setAnimatedSkills] = useState(new Set());
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const skillIndex = entry.target.getAttribute('data-skill-index');
-            setAnimatedSkills(prev => new Set([...prev, skillIndex]));
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    const skillElements = document.querySelectorAll('.skill-badge');
-    skillElements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
-  }, []);
-  const skillCategories = [
-    {
-      title: "Languages",
-      skills: [
-        { name: "JavaScript", icon: <FaJs />, level: 95 },
-        { name: "TypeScript", icon: <SiTypescript />, level: 85 },
-        { name: "HTML5", icon: <FaHtml5 />, level: 95 },
-        { name: "CSS3", icon: <FaCss3Alt />, level: 90 },
-        { name: "PHP", icon: <FaPhp />, level: 85 },
-        { name: "C++", icon: <SiCplusplus />, level: 75 },
-        { name: "C", icon: <SiC />, level: 70 }
-      ]
-    },
-    {
-      title: "Frontend",
-      skills: [
-        { name: "React.js", icon: <FaReact />, level: 95 },
-        { name: "Next.js", icon: <SiNextdotjs />, level: 85 },
-        { name: "Redux", icon: <SiRedux />, level: 80 },
-        { name: "Tailwind CSS", icon: <SiTailwindcss />, level: 90 },
-        { name: "jQuery", icon: <SiJquery />, level: 85 }
-      ]
-    },
-    {
-      title: "Backend",
-      skills: [
-        { name: "Node.js", icon: <FaNodeJs />, level: 90 },
-        { name: "Express.js", icon: <SiExpress />, level: 90 },
-        { name: "MongoDB", icon: <SiMongodb />, level: 85 },
-        { name: "MySQL", icon: <SiMysql />, level: 80 },
-        { name: "Redis", icon: <SiRedis />, level: 75 },
-        { name: "Elasticsearch", icon: <SiElasticsearch />, level: 70 }
-      ]
-    },
-    {
-      title: "Tools",
-      skills: [
-        { name: "Git", icon: <FaGitAlt />, level: 90 },
-        { name: "GitHub", icon: <FaGitAlt />, level: 90 },
-        { name: "AWS", icon: <FaAws />, level: 75 },
-        { name: "Docker", icon: <FaDocker />, level: 80 },
-        { name: "Jenkins", icon: <SiJenkins />, level: 70 },
-        { name: "Bitbucket", icon: <SiBitbucket />, level: 85 },
-        { name: "Postman", icon: <SiPostman />, level: 90 },
-        { name: "WordPress", icon: <SiWordpress />, level: 80 }
-      ]
-    }
-  ];
+  const [active, setActive] = useState('all');
+  const shown = active === 'all' ? CATEGORIES : CATEGORIES.filter(c => c.key === active);
 
   return (
-    <section id="skills" className="skills section-padding">
+    <main className="page">
       <div className="container">
-        <div className="text-center">
-          <h2 className="section-title">Technical Skills</h2>
-          <p className="section-subtitle">
-            Technologies and tools I use to bring ideas to life
-          </p>
-        </div>
-        
-        <div className="skills-filter">
-          <button 
-            className={`filter-btn ${activeCategory === 'all' ? 'active' : ''}`}
-            onClick={() => setActiveCategory('all')}
-          >
-            All Skills
-          </button>
-          {skillCategories.map((category, index) => (
-            <button 
-              key={index}
-              className={`filter-btn ${activeCategory === category.title.toLowerCase() ? 'active' : ''}`}
-              onClick={() => setActiveCategory(category.title.toLowerCase())}
-            >
-              {category.title}
+        <div className="section-number"><span>№ 03</span></div>
+        <h1 className="page-headline">Skills<span className="amber">.</span></h1>
+        <div className="amber-rule" />
+
+        <div className="skills-filters">
+          <button className={`skill-filter-btn ${active === 'all' ? 'active' : ''}`} onClick={() => setActive('all')}>All</button>
+          {CATEGORIES.map(c => (
+            <button key={c.key} className={`skill-filter-btn ${active === c.key ? 'active' : ''}`} onClick={() => setActive(c.key)}>
+              {c.label}
             </button>
           ))}
         </div>
 
-        <div className="skills-categories">
-          {skillCategories
-            .filter(category => activeCategory === 'all' || activeCategory === category.title.toLowerCase())
-            .map((category, categoryIndex) => (
-            <div key={categoryIndex} className="skill-category-section">
-              <h3 className="category-title">{category.title}</h3>
-              <div className="skills-grid-category">
-                {category.skills.map((skill, skillIndex) => {
-                  const skillKey = `${categoryIndex}-${skillIndex}`;
-                  const isAnimated = animatedSkills.has(skillKey);
-                  return (
-                    <div 
-                      key={skillIndex} 
-                      className={`skill-badge ${isAnimated ? 'animated' : ''}`}
-                      data-skill-index={skillKey}
-                    >
-                      <span className="skill-icon">{skill.icon}</span>
-                      <span className="skill-name">{skill.name}</span>
-                      {skill.level && (
-                        <div className="skill-level">
-                          <div className="skill-bar">
-                            <div 
-                              className="skill-progress"
-                              style={{
-                                width: isAnimated ? `${skill.level}%` : '0%',
-                                transition: 'width 1.5s ease-out'
-                              }}
-                            ></div>
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  );
-                })}
+        <div className="skills-grid">
+          {shown.map(cat => (
+            <div key={cat.key} className="skill-category">
+              <p className="skill-cat-label">{cat.label.toUpperCase()}</p>
+              <div className="skill-tags">
+                {cat.skills.map(s => (
+                  <span key={s.name} className="skill-tag">
+                    <span className="skill-tag-icon">{s.icon}</span>
+                    {s.name}
+                  </span>
+                ))}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="skills-summary">
-          <div className="summary-card">
-            <h3>Technical Expertise</h3>
-            <div className="expertise-grid">
-              <div className="expertise-item">
-                <div className="expertise-number">3.5+</div>
-                <div className="expertise-label">Years Experience</div>
-              </div>
-              <div className="expertise-item">
-                <div className="expertise-number">12+</div>
-                <div className="expertise-label">Technologies</div>
-              </div>
-              <div className="expertise-item">
-                <div className="expertise-number">9+</div>
-                <div className="expertise-label">Projects Completed</div>
-              </div>
-              <div className="expertise-item">
-                <div className="expertise-number">100%</div>
-                <div className="expertise-label">Client Satisfaction</div>
-              </div>
-            </div>
-          </div>
+        <div className="home-stats" style={{marginTop: '48px'}}>
+          <div className="stat"><span className="stat-num">5+</span><span className="stat-label">YRS EXPERIENCE</span></div>
+          <div className="stat-divider" />
+          <div className="stat"><span className="stat-num">20+</span><span className="stat-label">TECHNOLOGIES</span></div>
+          <div className="stat-divider" />
+          <div className="stat"><span className="stat-num">12+</span><span className="stat-label">PROJECTS</span></div>
+          <div className="stat-divider" />
+          <div className="stat"><span className="stat-num">100%</span><span className="stat-label">COMMITTED</span></div>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 
