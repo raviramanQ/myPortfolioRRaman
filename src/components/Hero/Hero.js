@@ -10,14 +10,14 @@ const Home = () => (
 
       <div className="home-grid">
         <div className="home-content">
-          <p className="home-kicker">FULL STACK · AI ENGINEER · 5 YRS</p>
+          <p className="home-kicker">MERN/MEAN Stack Developer · 4+ YRS Experiance</p>
           <h1 className="page-headline home-headline">
-            Building<br />
-            <span className="amber">the future</span><br />
-            with code<span className="amber">.</span>
+          Senior Software  <br /> Engineer <br />
+            <span className="amber">AI the future</span><br />
+          
           </h1>
           <p className="home-tagline">
-            MERN · PHP · Agentic AI · Generative AI · RAG · AWS · Networking
+            MERN · Agentic AI · Generative AI · RAG · AWS · PHP · Networking
           </p>
 
           <div className="home-ctas">

@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="container navbar-inner">
-        <NavLink to="/" className="navbar-logo">RR</NavLink>
+        <NavLink to="/" className="navbar-logo">RAVI RAMAN</NavLink>
 
         <nav className={`navbar-links ${menuOpen ? 'open' : ''}`}>
           {navItems.map(({ path, label }) => (
@@ -39,7 +39,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
           >
-            HIRE ME
+           CV
           </a>
         </nav>
 
@@ -49,7 +49,7 @@ const Navbar = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          HIRE ME
+          CV
         </a>
 
         <button className="menu-toggle" onClick={() => setMenuOpen(o => !o)} aria-label="Toggle menu">
