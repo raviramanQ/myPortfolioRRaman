@@ -23,7 +23,7 @@ const Home = () => (
           <div className="home-ctas">
             <Link to="/projects" className="btn-outline">VIEW WORK</Link>
             <a
-              href="https://drive.google.com/uc?export=download&id=1WrsaJ83sot4d1MAVOZ8lDgEVoDXPtdS6"
+              href="https://drive.google.com/uc?export=download&id=1p-_a5zYJ30W-DIUea7SElhXoLjGEb52C"
               className="btn-solid"
               target="_blank"
               rel="noopener noreferrer"

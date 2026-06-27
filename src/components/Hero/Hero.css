@@ -87,8 +87,8 @@
   border-radius: 50%;
   position: relative;
   z-index: 1;
-  transform: scale(1.35);
-  transform-origin: center 20%;
+  transform: scale(1.60);
+  transform-origin: center 90%;
 }
 
 .avatar-fallback {
