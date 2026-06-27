@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 import './Experience.css';
 
 const Experience = () => {
@@ -12,15 +11,15 @@ const Experience = () => {
       type: "Full-time",
       description: [
         "Spearheaded the development of a Lead Management System, improving lead allocation efficiency by 40% and reducing manual intervention by 60%",
+        "Built Agentic AI workflows and RAG pipelines using LangChain and OpenAI API to automate content generation and intelligent data retrieval",
         "Engineered real-time data aggregation and filtering modules, enabling client-specific reporting and reducing query response time by 25%",
         "Deployed MongoDB and MySQL to streamline data storage, achieving 30% faster server-side retrieval and reducing downtime by 20%",
-        "Showcased expertise in 91 Wheels through in-house scripting using Redux, REST API",
-        "Utilized AWS services (EC2, S3) for cloud-based deployment and data storage",
+        "Utilized AWS services (EC2, S3, Lambda, VPC) for cloud-native deployment, networking, and scalable infrastructure management",
         "Automated and visualized daily test results, reducing report preparation time from 2 hours to 10 minutes",
-        "Managed backend schema for 'Giz Technology' with Node.js, ensuring efficient data processing, API integration, and robust server operations",
+        "Managed backend schema for 'Giz Technology' with Node.js and PHP, ensuring efficient data processing, API integration, and robust server operations",
         "Led front-end optimization efforts for Giz Next, improving page load speed by 35% and optimizing database queries to support 20K+ daily users"
       ],
-      technologies: ["React.js", "Node.js", "MongoDB", "MySQL", "Redux", "AWS", "Express.js", "REST API"]
+      technologies: ["React.js", "Node.js", "MongoDB", "MySQL", "Redux", "AWS", "Express.js", "PHP", "LangChain", "OpenAI API", "RAG"]
     },
     {
       title: "Full Stack Software Developer",
@@ -67,87 +66,48 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="experience section-padding">
+    <main className="page">
       <div className="container">
-        <div className="text-center">
-          <h2 className="section-title">Experience & Education</h2>
-          <p className="section-subtitle">
-            My professional journey and educational background
-          </p>
-        </div>
-        
-        <div className="experience-content">
-          {/* Work Experience */}
-          <div className="experience-section">
-            <h3 className="subsection-title">
-              <FaBriefcase /> Work Experience
-            </h3>
+        <div className="section-number"><span>№ 05</span></div>
+        <h1 className="page-headline">Experience<span className="amber">.</span></h1>
+        <div className="amber-rule" />
+
+        <div className="experience-layout">
+          <div>
+            <p className="exp-section-title">Work Experience</p>
             <div className="timeline">
-              {experiences.map((exp, index) => (
-                <div key={index} className="timeline-item">
-                  <div className="timeline-marker"></div>
-                  <div className="timeline-content">
-                    <div className="experience-header">
-                      <h4 className="job-title">{exp.title}</h4>
-                      <div className="job-meta">
-                        <span className="company">{exp.company}</span>
-                        <span className="location">
-                          <FaMapMarkerAlt /> {exp.location}
-                        </span>
-                        <span className="duration">
-                          <FaCalendarAlt /> {exp.duration}
-                        </span>
-                        <span className="job-type">{exp.type}</span>
-                      </div>
-                    </div>
-                    
-                    <ul className="job-description">
-                      {exp.description.map((item, idx) => (
-                        <li key={idx}>{item}</li>
-                      ))}
-                    </ul>
-                    
-                    <div className="technologies">
-                      {exp.technologies.map((tech, idx) => (
-                        <span key={idx} className="tech-tag">{tech}</span>
-                      ))}
+              {experiences.map((exp, i) => (
+                <div key={i} className="timeline-item">
+                  <div className="timeline-spine">
+                    <div className={`timeline-dot ${i > 0 ? 'past' : ''}`} />
+                    {i < experiences.length - 1 && <div className="timeline-line" />}
+                  </div>
+                  <div className={`timeline-body ${i > 0 ? 'past' : ''}`}>
+                    <p className="exp-role">{exp.title}</p>
+                    <p className="exp-company">{exp.company} · {exp.duration}</p>
+                    <p className="exp-desc">{exp.description.slice(0, 3).join(' • ')}</p>
+                    <div className="exp-tech">
+                      {exp.technologies.map((t, j) => <span key={j}>{t}</span>)}
                     </div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          
-          {/* Education */}
-          <div className="education-section">
-            <h3 className="subsection-title">Education</h3>
-            {education.map((edu, index) => (
-              <div key={index} className="education-card">
-                <h4 className="degree">{edu.degree}</h4>
-                <div className="institution-info">
-                  <span className="institution">{edu.institution}</span>
-                  <span className="edu-duration">{edu.duration}</span>
-                </div>
-                <div className="grade">{edu.grade}</div>
-                <p className="edu-description">{edu.description}</p>
+
+          <div>
+            <p className="exp-section-title">Education</p>
+            {education.map((edu, i) => (
+              <div key={i} className="edu-item">
+                <p className="edu-degree">{edu.degree}</p>
+                <p className="edu-inst">{edu.institution}</p>
+                <p className="edu-year">{edu.duration} · {edu.grade}</p>
               </div>
             ))}
-            
-            {/* Certifications */}
-            <div className="certifications">
-              <h4 className="cert-title">Certifications</h4>
-              <div className="cert-list">
-                {certifications.map((cert, index) => (
-                  <div key={index} className="cert-item">
-                    <span className="cert-name">{cert}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

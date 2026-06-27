@@ -1,327 +1,119 @@
-.experience {
-  background: #f8fafc;
-}
-
-.experience-content {
+.experience-layout {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 4rem;
-  margin-top: 3rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
 }
 
-.subsection-title {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.exp-section-title {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--amber);
+  margin-bottom: 24px;
+  text-transform: uppercase;
 }
 
-.subsection-title svg {
-  color: #667eea;
-}
-
-/* Timeline Styles */
-.timeline {
-  position: relative;
-  padding-left: 2rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 15px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
+.timeline { display: flex; flex-direction: column; }
 
 .timeline-item {
-  position: relative;
-  margin-bottom: 3rem;
-}
-
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
-
-.timeline-marker {
-  position: absolute;
-  left: -2rem;
-  top: 0;
-  width: 12px;
-  height: 12px;
-  background: #667eea;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 0 3px #667eea;
-}
-
-.timeline-content {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e8f0;
-  transition: all 0.3s ease;
-}
-
-.timeline-content:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
-
-.experience-header {
-  margin-bottom: 1.5rem;
-}
-
-.job-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 0.5rem;
-}
-
-.job-meta {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  font-size: 0.9rem;
-  color: #4a5568;
+  gap: 16px;
+  align-items: flex-start;
 }
 
-.company {
-  font-weight: 600;
-  color: #667eea;
-}
-
-.location, .duration {
+.timeline-spine {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.3rem;
+  padding-top: 4px;
+  flex-shrink: 0;
 }
 
-.job-type {
-  background: #e2e8f0;
-  padding: 0.2rem 0.6rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--amber);
+  flex-shrink: 0;
 }
 
-.job-description {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
+.timeline-dot.past { background: var(--border-slate); }
+
+.timeline-line {
+  width: 1px;
+  flex: 1;
+  min-height: 20px;
+  background: var(--border-slate);
+  margin-top: 4px;
 }
 
-.job-description li {
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #f1f5f9;
-  position: relative;
-  padding-left: 1.5rem;
-  line-height: 1.6;
-  color: #4a5568;
+.timeline-body {
+  flex: 1;
+  background: var(--navy-surface);
+  border-left: 2px solid var(--amber);
+  padding: 14px 16px;
+  margin-bottom: 16px;
 }
 
-.job-description li:last-child {
-  border-bottom: none;
+.timeline-body.past { border-left-color: var(--border-slate); }
+
+.exp-role {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 3px;
 }
 
-.job-description li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: #667eea;
-  font-weight: bold;
+.exp-company {
+  font-size: 11px;
+  color: var(--amber);
+  margin-bottom: 8px;
 }
 
-.technologies {
+.timeline-body.past .exp-company { color: var(--text-muted); }
+
+.exp-desc {
+  font-size: 11px;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.exp-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 5px;
 }
 
-.tech-tag {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 500;
+.exp-tech span {
+  font-size: 8px;
+  color: var(--text-dimmer);
+  background: var(--navy-card);
+  padding: 2px 7px;
+  border-radius: 2px;
 }
 
-/* Education Section */
-.education-section {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.edu-item {
+  background: var(--navy-surface);
+  border-left: 2px solid var(--amber);
+  padding: 14px 16px;
+  margin-bottom: 12px;
 }
 
-.education-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e8f0;
-}
-
-.degree {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 1rem;
-}
-
-.institution-info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.institution {
+.edu-degree {
+  font-size: 13px;
   font-weight: 600;
-  color: #667eea;
-  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 3px;
 }
 
-.edu-duration {
-  color: #4a5568;
-  font-size: 0.9rem;
+.edu-inst {
+  font-size: 11px;
+  color: var(--amber);
+  margin-bottom: 3px;
 }
 
-.grade {
-  background: #e6fffa;
-  color: #065f46;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 600;
-  display: inline-block;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
-}
+.edu-year { font-size: 10px; color: var(--text-dim); }
 
-.edu-description {
-  color: #4a5568;
-  line-height: 1.6;
-}
-
-/* Certifications */
-.certifications {
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-  border: 1px solid #e2e8f0;
-}
-
-.cert-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 1.5rem;
-}
-
-.cert-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.cert-item {
-  padding: 0.8rem 1rem;
-  background: #f8fafc;
-  border-radius: 8px;
-  border-left: 4px solid #667eea;
-  transition: all 0.3s ease;
-}
-
-.cert-item:hover {
-  background: #e6fffa;
-  border-left-color: #38b2ac;
-}
-
-.cert-name {
-  font-weight: 500;
-  color: #2d3748;
-}
-
-/* Mobile Responsive */
-@media (max-width: 1024px) {
-  .experience-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .timeline {
-    padding-left: 1.5rem;
-  }
-
-  .timeline-marker {
-    left: -1.5rem;
-  }
-
-  .timeline-content {
-    padding: 1.5rem;
-  }
-
-  .job-meta {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .job-title {
-    font-size: 1.2rem;
-  }
-
-  .technologies {
-    gap: 0.3rem;
-  }
-
-  .tech-tag {
-    font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
-  }
-
-  .education-card, .certifications {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .timeline {
-    padding-left: 1rem;
-  }
-
-  .timeline-marker {
-    left: -1rem;
-    width: 8px;
-    height: 8px;
-  }
-
-  .timeline-content {
-    padding: 1rem;
-  }
-
-  .subsection-title {
-    font-size: 1.5rem;
-  }
-
-  .job-title {
-    font-size: 1.1rem;
-  }
-
-  .degree {
-    font-size: 1.1rem;
-  }
-
-  .cert-title {
-    font-size: 1.1rem;
-  }
+@media (max-width: 900px) {
+  .experience-layout { grid-template-columns: 1fr; gap: 40px; }
 }
