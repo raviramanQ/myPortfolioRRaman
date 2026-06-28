@@ -10,7 +10,7 @@ const Home = () => (
 
       <div className="home-grid">
         <div className="home-content">
-          <p className="home-kicker">MERN/MEAN Stack Developer · 4+ YRS Experiance</p>
+          <p className="home-kicker">MERN/MEAN Stack Developer · 5+ YRS Experiance</p>
           <h1 className="page-headline home-headline">
           Senior Software  <br /> Engineer <br />
             <span className="amber">AI the future</span><br />
